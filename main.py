@@ -37,7 +37,7 @@ def run_experiment( sess, hps ):
         for t in itertools.count():
             # if i % hps['render_every'] == 0: env.render()
             # if i > 100: env.render()
-            env.render()
+            # env.render()
             a1 = agent.explore( np.reshape( s1, ( 1, hps['s_dim'] ) ), i )
             s2, r1, d, _ = env.step( np.reshape( a1, ( hps['a_dim'], ) ) )
             if not d:
@@ -60,7 +60,7 @@ def main():
         'render_every': 30,
         'num_episodes': 10000,
         'buffer_size': 100000,
-        'batch_size': 64,
+        'batch_size': 128,
         'noise_decay': 0.9999,
         'actor_lr': 0.0001,
         'critic_lr': 0.001,
