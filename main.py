@@ -11,7 +11,7 @@ import gym
 import itertools
 from agent import Agent
 from rm import ReplayMemory
-from utils import hard_update
+from utils import do_hard_update
 
 
 def run_experiment( sess, hps ):
