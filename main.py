@@ -27,8 +27,8 @@ def run_experiment( sess, hps ):
     agent = Agent( sess, hps, rm )
 
     sess.run( tf.global_variables_initializer() )
-    hard_update( sess, 'actor_target', 'actor' )
-    hard_update( sess, 'critic_target', 'critic' )
+    do_hard_update( sess, 'actor_target', 'actor' )
+    do_hard_update( sess, 'critic_target', 'critic' )
 
     for i in range( 0, hps['num_episodes'] ):
         s1 = env.reset()
@@ -37,7 +37,7 @@ def run_experiment( sess, hps ):
         for t in itertools.count():
             # if i % hps['render_every'] == 0: env.render()
             # if i > 100: env.render()
-            # env.render()
+            env.render()
             a1 = agent.explore( np.reshape( s1, ( 1, hps['s_dim'] ) ), i )
             s2, r1, d, _ = env.step( np.reshape( a1, ( hps['a_dim'], ) ) )
             if not d:

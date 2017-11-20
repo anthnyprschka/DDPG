@@ -30,7 +30,7 @@ class OrnsteinUhlenbeck( object ):
         plt.show()
 
 
-def hard_update( sess, target_scope, source_scope ):
+def do_hard_update( sess, target_scope, source_scope ):
     target_params = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES,
         scope=target_scope )
     source_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
@@ -59,13 +59,11 @@ def save_model(  ):
     return
 
 
-
 def load_model(  ):
     # TODO
     #
     #
     return
-
 
 
 def build_summaries(  ):
