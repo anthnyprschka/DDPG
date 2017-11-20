@@ -1,6 +1,11 @@
 # Deep Deterministic Policy Gradient (DDPG)
 Implementation of Lillicrap et al. (2015)'s DDPG algorithm in Tensorflow
 
+## Dependencies
+- numpy
+- tensorflow
+- gym
+
 ## How to run
 - To run the algorithm on a toy problem, just do `python main.py`. 
 - By default it will train on OpenAI Gym's Pendulum-v0 environment and render every episode. 
